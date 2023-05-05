@@ -69,7 +69,7 @@ curl --form input=@/media/lopez/data/allofplos/journal.pone.0124721.xml --form d
 
 However when processing a large amount of JATS files, this is inefficient because for each call a Pub2TEI transformation is realized from scratch by the server, which means loading and compiling the full set of XSLT stylesheets, which takes around 2 seconds each time. 
 
-A more efficient approach is to transform first all the XML JATS files into XML TEI in a batch application of Pub2TEI and then send TEI files to the service. With the batch approach, as the XSLT stylesheets are loaded and compiled only time for all the processed JATS file, it should lead to the transformation of 100-200 JATS files per second. Then the service will process TEI files without any pre-processing, which will be much faster. 
+A more efficient approach is to transform first all the XML JATS files into XML TEI in a batch application of Pub2TEI and then send TEI files to the service. With the batch approach, as the XSLT stylesheets are loaded and compiled only time for all the processed JATS file, it should lead to the transformation of 50-100 JATS files per second. Then the service will process TEI files without any pre-processing, which will be much faster. 
 
 For batch conversion of JATS files under `/media/lopez/data/allofplos` with TEI files written under `/media/lopez/data/allofplos/tei`, move under the Pub2TEI install repository and use:
 
@@ -85,6 +85,7 @@ After 2 to 3 hours, depending on your hardware, all the JATS files will be conve
 Simply use the client to process all the TEI files in parallel passing the repository path:
 
 ```console
+cd software_mentions_client
 python3 -m software_mentions_client.client --repo-in /media/lopez/data/allofplos/tei 
 ```
 
