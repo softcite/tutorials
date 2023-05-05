@@ -64,7 +64,7 @@ To use Pub2TEI, you will need Java installed on your system. Any Java versions s
 The Softcite software mention recognizer can process directly JATS XML files. For example: 
 
 ```console
-curl --form input=@/media/lopez/data/allofplos/journal.pone.0124721.xml --form disambiguate=1 localhost:8060/service/extractSoftwareXML
+curl --form input=@/media/lopez/data/allofplos/journal.pone.0124721.xml --form disambiguate=1 localhost:8060/service/annotateSoftwareXML
 ```
 
 However when processing a large amount of JATS files, this is inefficient because for each call a Pub2TEI transformation is realized from scratch by the server, which means loading and compiling the full set of XSLT stylesheets, which takes around 2 seconds each time. 
