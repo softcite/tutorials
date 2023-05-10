@@ -93,7 +93,7 @@ Be sure to have the correct URL of the softcite server in the `config.json` of t
 
 The extracted software mentions will be written in JSON files along the XML files. The process can be interrupted and resumed. 
 
-On a 5 years old desktop machine, with nvidia GTX 1080Ti GPU (11 GB memory), the server process around 1 TEI file per second (as a comparison with a similar parallel processing mode, one PDF file is processed in average in 2 seconds). 
+On a 5 years old desktop machine, with nvidia GTX 1080Ti GPU (11 GB memory), the server process around 1 TEI file per second (as a comparison with a similar parallel processing mode, one PDF file is processed in average in 2 seconds). This includes the disambiguation of software entities against Wikidata and the consolidation of the bibliographical references attached to the extracted software mentions. 
 
 We processed the full PLOS XML corpus in slightly more than **4 days with one server**. 
 
