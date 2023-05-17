@@ -12,14 +12,14 @@ Note: With this archive, all the XML files are written under the same directory.
 
 #### 1) Softcite software mention recognizer service
 
-For using the Softcite software mention recognizer, a Docker image is available containing all the Deep LEarning models with the best accuracy settings. It will recognize automatically available GPU. 
+For using the Softcite software mention recognizer, a Docker image is available containing all the Deep Learning models with the best accuracy settings. It will recognize automatically available GPU. 
 
 ```console
-docker pull grobid/software-mentions:0.7.3-SNAPSHOT
-docker run --rm --gpus all -it -p 8060:8060 grobid/software-mentions:0.7.3-SNAPSHOT
+docker pull grobid/software-mentions:0.8.0-SNAPSHOT
+docker run --rm --gpus all -it -p 8060:8060 grobid/software-mentions:0.8.0-SNAPSHOT
 ```
 
-The service is running on the port `8060`. 
+The service is running on the port `8060` (map the port as required with the above command line). 
 
 #### 2) Python Softcite recognizer client
 
@@ -91,11 +91,15 @@ python3 -m software_mentions_client.client --repo-in /media/lopez/data/allofplos
 
 Be sure to have the correct URL of the softcite server in the `config.json` of the client. 
 
-The extracted software mentions will be written in JSON files along the XML files. The process can be interrupted and resumed. 
+The extracted software mentions will be written in JSON files along the XML files. The process can be interrupted and resumed: In case  of any problems on client or server side, the process can be resumed and reprocess any failed input files by adding the `--reprocess` parameter:
+
+```console
+python3 -m software_mentions_client.client --repo-in /media/lopez/data/allofplos/tei --reprocess
+```
 
 On a 5 years old desktop machine, with nvidia GTX 1080Ti GPU (11 GB memory), the server process around 1 TEI file per second (as a comparison with a similar parallel processing mode, one PDF file is processed in average in 2 seconds). This includes the disambiguation of software entities against Wikidata and the consolidation of the bibliographical references attached to the extracted software mentions. 
 
-We processed the full PLOS XML corpus in slightly more than **4 days with one server**. 
+We processed the full PLOS XML corpus (336K documents) in slightly more than **4 days with one server**. 
 
 ## Annex: Processing XML JATS or PDF? 
 
