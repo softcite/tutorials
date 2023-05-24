@@ -101,6 +101,33 @@ On a 5 years old desktop machine, with nvidia GTX 1080Ti GPU (11 GB memory), the
 
 We processed the full PLOS XML corpus (336K documents) in slightly more than **4 days with one server**. 
 
+To produce some statistics about the results (located in the `*.software.json` files along the XML files): 
+
+```console
+python3 -m software_mentions_client.client --diagnostic-files --repo-in /media/lopez/data/allofplos/tei
+```
+
+```
+JSON files - number of documents:  336167
+JSON files - number of software mentions:  1605044
+             -> subtype standalone: 1471157
+             -> subtype environment: 100993
+             -> subtype component: 12567
+             -> subtype implicit: 20327
+             * with software name: 1605044
+             * with version: 389533
+             * with publisher: 221462
+             * with url: 38820
+             * with programming language: 14029
+             * with at least one reference 52586
+---
+JSON files - number of bibliographical reference markers:  530151
+JSON files - number of bibliographical references:  136869
+              * with DOI: 119802
+              * with PMID: 99588
+              * with PMC ID: 62459
+```
+
 ## Annex: Processing XML JATS or PDF? 
 
 For the PLOS collection, both JATS and PDF formats are available in open access. 
