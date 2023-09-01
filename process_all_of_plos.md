@@ -99,7 +99,7 @@ python3 -m software_mentions_client.client --repo-in /media/lopez/data/allofplos
 
 On a 5 years old desktop machine, with nvidia GTX 1080Ti GPU (11 GB memory), the server process around 1 TEI file per second (as a comparison with a similar parallel processing mode, one PDF file is processed in average in 2 seconds). This includes the disambiguation of software entities against Wikidata and the consolidation of the bibliographical references attached to the extracted software mentions. 
 
-We processed the full PLOS XML corpus (336K documents) in slightly more than **4 days with one server**. 
+We processed the full PLOS XML corpus (336K documents) in slightly more than **4 days with one server**. For reference, the full software mentions extraction made on 2023-05-21 is available [here](https://science-miner.s3.us-west-2.amazonaws.com/datasets/allOfPLOS-software-annotations_2023-05-21.zip).
 
 To produce some statistics about the results (located in the `*.software.json` files along the XML files): 
 
