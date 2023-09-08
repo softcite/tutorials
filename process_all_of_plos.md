@@ -6,7 +6,7 @@ The full collection is available [here](https://allof.plos.org/allofplos.zip), u
 
 As for 2023-05-05, the corpus contains 336,168 files (7.5G compressed, 38G uncompressed). 
 
-Note: With this archive, all the XML files are written under the same directory. This is a lot of files under the same directory and this is known to be inefficient in term of file system (we usually distribute files in smaller subdirectories of a few hundred files maximum). However, the number of files here is still manageable, with a relatively limited runtime immpact. For the sake of simplicity, we do not consider re-organizing these files on the file system, but this could be necessary as the corpus is growing. 
+Note: With this archive, all the XML files are written under the same directory. This is a lot of files under the same directory and this is known to be inefficient in term of file system (we usually distribute files in smaller subdirectories of a few hundred files maximum). However, the number of files here is still manageable, with a relatively limited runtime impact. For the sake of simplicity, we do not consider re-organizing these files on the file system, but this could be necessary as the corpus is growing. 
 
 ## Install the Softcite software mention recognizer service, the client and Pub2TEI
 
