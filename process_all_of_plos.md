@@ -74,7 +74,7 @@ A more efficient approach is to transform first all the XML JATS files into XML 
 For batch conversion of JATS files under `/media/lopez/data/allofplos` with TEI files written under `/media/lopez/data/allofplos/tei`, move under the Pub2TEI install repository and use:
 
 ```console
-cd ~/Pub2TEI
+cd ./Pub2TEI
 java -jar Samples/saxon9he.jar -s:/media/lopez/data/allofplos -xsl:Stylesheets/Publishers.xsl -o:/media/lopez/data/allofplos/tei -dtd:off -a:off -expand:off -t --parserFeature?uri=http%3A//apache.org/xml/features/nonvalidating/load-external-dtd:false 
 ```
 
